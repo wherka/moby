@@ -367,6 +367,7 @@ func (c *containerConfig) hostConfig() *enginecontainer.HostConfig {
 		Isolation:      c.isolation(),
 		Init:           c.init(),
 		Sysctls:        c.spec().Sysctls,
+		Privileged:     c.spec().Privileged,
 	}
 
 	if c.spec().DNSConfig != nil {
