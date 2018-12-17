@@ -37,6 +37,7 @@ func containerSpecFromGRPC(c *swarmapi.ContainerSpec) *types.ContainerSpec {
 		Isolation:  IsolationFromGRPC(c.Isolation),
 		Init:       initFromGRPC(c.Init),
 		Sysctls:    c.Sysctls,
+		Privileged: c.Privileged,
 	}
 
 	if c.DNSConfig != nil {
@@ -253,6 +254,7 @@ func containerToGRPC(c *types.ContainerSpec) (*swarmapi.ContainerSpec, error) {
 		Isolation:  isolationToGRPC(c.Isolation),
 		Init:       initToGRPC(c.Init),
 		Sysctls:    c.Sysctls,
+		Privileged: c.Privileged,
 	}
 
 	if c.DNSConfig != nil {

@@ -72,4 +72,5 @@ type ContainerSpec struct {
 	Configs   []*ConfigReference  `json:",omitempty"`
 	Isolation container.Isolation `json:",omitempty"`
 	Sysctls   map[string]string   `json:",omitempty"`
+	Privileged bool               `json:",omitempty"`
 }
